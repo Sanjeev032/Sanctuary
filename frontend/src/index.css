@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Manrope", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #3e6842;
+  --color-primary-container: #7ba77c;
+  --color-on-primary-container: #123b1b;
+  
+  --color-secondary: #306767;
+  --color-secondary-container: #b5edec;
+  --color-on-secondary-container: #376d6d;
+  
+  --color-tertiary: #7d562d;
+  --color-tertiary-container: #c29364;
+  --color-on-tertiary-container: #4c2c06;
+
+  --color-surface: #fbf9f2;
+  --color-on-surface: #1b1c18;
+  --color-on-surface-variant: #424941;
+  --color-surface-container-low: #f6f4ec;
+  --color-surface-container-high: #eae8e1;
+  --color-surface-container-lowest: #ffffff;
+}
+
+@layer utilities {
+  .glass-orb {
+    @apply backdrop-blur-3xl bg-surface/40;
+  }
+  .glass-panel {
+    @apply backdrop-blur-2xl bg-surface/70;
+  }
+  .biophilic-gradient {
+    background: var(--biophilic-gradient, radial-gradient(circle at 0% 0%, #fbf9f2 0%, #f6f4ec 50%, #eae8e1 100%));
+  }
+}
+
+body {
+  @apply bg-surface text-on-surface font-body antialiased;
+}
+
+h1, h2, h3, h4, .font-headline {
+  @apply font-headline;
+}
