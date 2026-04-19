@@ -2,13 +2,13 @@
 
 Peace is a biophilic, zen-inspired mindfulness application designed to help users find their inner sanctuary. Through nature-inspired design, guided breathing exercises, mood-based music therapy, and personal journaling, Peace provides a holistic approach to mental well-being.
 
----
+
 
 ## 🍃 Biophilic Zen Philosophy
 
 At its core, Peace is built upon the principles of **Biophilic Design**—integrating nature into our digital spaces to reduce stress, improve cognitive function, and enhance mood. The user interface features soft organic shapes, a nature-inspired color palette, and smooth, flowing animations that mimic natural movement.
 
----
+
 
 ## 🌟 Key Features
 
@@ -19,7 +19,6 @@ At its core, Peace is built upon the principles of **Biophilic Design**—integr
 - **📊 Admin Dashboard**: A comprehensive portal for managing music content, mood categories, and monitoring platform growth.
 - **🔐 Secure Sanctuary**: Personal accounts with JWT-based authentication to keep your data private and secure.
 
----
 
 ## 🛠️ Technology Stack
 
@@ -36,7 +35,7 @@ At its core, Peace is built upon the principles of **Biophilic Design**—integr
 - **JWT & bcryptjs**: Secure authentication and password hashing.
 - **TypeScript**: Type-safety across the entire backend for maintainable code.
 
----
+
 
 ## 🚀 Getting Started
 
@@ -49,7 +48,7 @@ At its core, Peace is built upon the principles of **Biophilic Design**—integr
 ```bash
 git clone https://github.com/Sanjeev032/Sanctuary.git
 cd Sanctuary
-```
+
 
 ### 2. Backend Setup
 ```bash
@@ -66,17 +65,12 @@ ADMIN_SECRET=your_admin_setup_secret
 Start the backend:
 ```bash
 npm run dev
-```
+
 
 ### 3. Frontend Setup
 ```bash
 cd ../frontend
 npm install
-```
-Create a `.env` file in the `frontend` directory:
-```env
-VITE_API_BASE_URL=http://localhost:5000/api
-```
 Start the frontend:
 ```bash
 npm run dev
