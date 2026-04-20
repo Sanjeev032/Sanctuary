@@ -1,4 +1,4 @@
-# Peace - The Living Sanctuary 🌿✨
+# Peace - The Living Sanctuary 
 
 Peace is a biophilic, zen-inspired mindfulness application designed to help users find their inner sanctuary. Through nature-inspired design, guided breathing exercises, mood-based music therapy, and personal journaling, Peace provides a holistic approach to mental well-being.
 
