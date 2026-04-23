@@ -35,7 +35,7 @@ const MusicTherapy = () => {
         <audio ref={audioRef} src={currentTrack.url} onEnded={() => { setCurrentTrackIndex((p)=>(p+1)%tracks.length); setIsPlaying(false); }} onPlay={()=>setIsPlaying(true)} onPause={()=>setIsPlaying(false)}/>
       )}
 
-      <div className="relative z-10 w-full lg:ml-64 p-6 md:p-12 lg:p-16 flex flex-col gap-12 text-white">
+      <div className="relative z-10 w-full p-6 md:p-12 lg:p-16 flex flex-col gap-12 text-white">
         <header className="space-y-2">
           <h1 className="text-5xl md:text-7xl font-black">{currentMood ? `${currentMood.name} Frequencies` : 'Audio Core'}</h1>
           <p className="opacity-70 text-lg max-w-xl">Dynamically synced. Currently playing: {currentTrack?.title || 'Awaiting connection...'}</p>

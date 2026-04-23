@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Wind } from 'lucide-react';
 import { useMood } from '../context/MoodContext';
+import { useAuth } from '../context/AuthContext';
 
 interface BreathingRecoProps {
   onStart: () => void;
@@ -46,6 +47,7 @@ interface BreathingSessionProps {
 
 export const BreathingSession = ({ onEnd }: BreathingSessionProps) => {
   const { currentMood } = useMood();
+  const { token } = useAuth();
   const [seconds, setSeconds] = useState(4);
   const [phase, setPhase] = useState('Inhale');
 
@@ -60,7 +62,14 @@ export const BreathingSession = ({ onEnd }: BreathingSessionProps) => {
 
   const handleEndSession = async () => {
     try {
-        await fetch('/api/v1/sessions/breathing', { method: 'POST', body: JSON.stringify({ duration: 60 }) });
+        await fetch('/api/v1/sessions/breathing', { 
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ duration: 60 }) 
+        });
     } catch(e) {}
     onEnd();
   };

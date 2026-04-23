@@ -76,21 +76,27 @@ const seedData = async () => {
     await Music.insertMany(music);
     console.log('Music seeded successfully');
 
-    // Create some initial stats for all users (optional)
+    // Create historical stats for all users (last 7 days)
     const users = await User.find({});
     for (const user of users) {
-        const statsExists = await DashboardStats.findOne({ userId: user._id });
-        if (!statsExists) {
+        // Clear old stats for these users to avoid duplicates if re-running
+        await DashboardStats.deleteMany({ userId: user._id });
+
+        for (let i = 0; i < 7; i++) {
+            const date = new Date();
+            date.setDate(date.getDate() - i);
+            
             await DashboardStats.create({
                 userId: user._id,
-                sleepQuality: 85,
-                mindfulMinutes: 30,
-                moodStability: 90,
-                focusFlow: 75
+                date: date,
+                sleepQuality: Math.floor(Math.random() * (95 - 60) + 60),
+                mindfulMinutes: Math.floor(Math.random() * (45 - 5) + 5),
+                moodStability: Math.floor(Math.random() * (90 - 70) + 70),
+                focusFlow: Math.floor(Math.random() * (85 - 50) + 50)
             });
         }
     }
-    console.log('Dashboard stats ensured for users');
+    console.log('Historical dashboard stats seeded for users');
 
     process.exit();
   } catch (error) {

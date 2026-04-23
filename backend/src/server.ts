@@ -26,6 +26,7 @@ import journalRoutes from './routes/journalRoutes';
 import musicRoutes from './routes/musicRoutes';
 import moodRoutes from './routes/moodRoutes';
 import dashboardRoutes from './routes/dashboardRoutes';
+import sessionRoutes from './routes/sessionRoutes';
 
 // Import Routes
 app.use('/api/v1/auth', authRoutes);
@@ -33,6 +34,7 @@ app.use('/api/v1/journals', journalRoutes);
 app.use('/api/v1/music', musicRoutes);
 app.use('/api/v1/moods', moodRoutes);
 app.use('/api/v1/dashboard', dashboardRoutes);
+app.use('/api/v1/sessions', sessionRoutes);
 
 // Secret Admin Panel
 app.use('/admin-portal-xyz', adminRoutes);
